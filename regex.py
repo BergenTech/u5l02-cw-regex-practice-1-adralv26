@@ -1,115 +1,115 @@
 import re
 
 # 1. Match the word "cat" in a string.
-pattern = r""
+pattern = r"cat"
 text = "The cat sat on the mat."
 match = re.search(pattern, text)
 print(match.group() if match else "No match")
 
-'''
 
 # 2. Match "cat" regardless of its case.
-pattern = r""
+pattern = r"cat"
 text = "The Cat sat on the mat."
-match = re.search(pattern, text)
+match = re.search(pattern, text,re.IGNORECASE)
 print(match.group() if match else "No match")
 
 # 3. Match any three-letter word ending with 'at'.
-pattern = r""
+pattern = r".at"
 text = "The cat sat on the mat."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 4. Match any sequence of digits.
-pattern = r""
+pattern = r"\d"
 text = "There are 123 apples."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 5. Match sequences not containing digits.
-pattern = r""
+pattern = r"\D"
 text = "There are 123 apples."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 6. Match "cat" as a whole word.
-pattern = r""
+pattern = r"cat(?= )"
 text = "The cat sat on the concatenate."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 7. Match "cat" or "bat".
-pattern = r""
+pattern = r"[b-c]at"
 text = "The cat and the bat."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 8. Match any word starting with a letter in the range 'a' to 'c'.
-pattern = r""
+pattern = r"\w[a-c](?!.)"
 text = "cat, bat, rat, mat."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 9. Match any three-letter word not starting with 'b' or 'c'.
-pattern = r""
+pattern = r"[^bc]at"
 text = "cat, bat, rat, mat."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 10. Check if the string starts with "The".
-pattern = r""
+pattern = r"^The"
 text = "The cat sat."
 match = re.search(pattern, text)
 print(match.group() if match else "No match")
 
 # 11. Check if the string ends with "sat."
-pattern = r""
+pattern = r"sat.$"
 text = "The cat sat."
 match = re.search(pattern, text)
 print(match.group() if match else "No match")
 
 # 12. Match "color" and "colour".
-pattern = r""
+pattern = r"colou?r"
 text = "Both color and colour are correct."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 13. Match "o" followed by any number of "o"s.
-pattern = r""
+pattern = r"bo*k"
 text = "The book is on the stool."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 14. Match "o" followed by one or more "o"s.
-pattern = r""
+pattern = r"bo+k"
 text = "The book is on the stool."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 15. Match "o" exactly twice.
-pattern = r""
+pattern = r"bo{2}k"
 text = "The book is on the stool."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 16. Match "o" between two and three times.
-pattern = r""
+pattern = r"bo{2,3}k"
 text = "The book is on the stool."
 matches = re.findall(pattern, text)
 print(matches)
 
 # 17. Match the smallest possible string of "o"s.
-pattern = r""
+pattern = r"bo+k"
 text = "The booooook is long."
 match = re.search(pattern, text)
 print(match.group() if match else "No match")
 
 # 18. Match and group "cat" or "bat".
-pattern = r""
+pattern = r"(cat|bat)"
 text = "The cat in the hat chased the bat."
 matches = re.findall(pattern, text)
 print(matches)
 
+''' 
 # 19. Match and capture nested groups.
 pattern = r""
 text = "The number is 123-456-7890."
